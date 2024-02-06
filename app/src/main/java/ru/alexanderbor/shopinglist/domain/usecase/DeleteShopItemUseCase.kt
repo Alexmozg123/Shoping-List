@@ -1,10 +1,13 @@
 package ru.alexanderbor.shopinglist.domain.usecase
 
 import ru.alexanderbor.shopinglist.domain.model.ShopModel
+import ru.alexanderbor.shopinglist.domain.repository.ShopListRepository
 
-class DeleteShopItemUseCase {
+class DeleteShopItemUseCase(
+    private val shopListRepository: ShopListRepository
+) {
 
     fun deleteShopItem(shopModel: ShopModel) {
-        TODO()
+        shopListRepository.deleteShopItem(shopModel)
     }
 }
